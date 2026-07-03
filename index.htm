@@ -113,6 +113,29 @@ const vfov=hfov*(canvas.height/canvas.width);
 const dx=lote.yaw-camYaw;
 
 const dy=lote.pitch-camPitch;
+console.clear();
+
+console.log("CAMARA");
+
+console.log(camYaw);
+
+console.log(camPitch);
+
+console.log(hfov);
+
+console.log("LOTE");
+
+console.log(lote.yaw);
+
+console.log(lote.pitch);
+
+console.log("DX",dx);
+
+console.log("DY",dy);
+
+console.log("X",x);
+
+console.log("Y",y);
 
 x=canvas.width/2+(dx/hfov)*canvas.width;
 
