@@ -1,0 +1,13 @@
+#: locale=es
+
+## Media
+
+### Título
+panorama_39FECC6F_24E2_8947_41A6_5D386EB01064.label = ASSTURIAS
+
+## Tour
+
+### Descripción
+
+### Título
+tour.name = ASSTURIAS
