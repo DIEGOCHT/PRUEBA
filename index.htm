@@ -58,7 +58,7 @@
 </canvas>
 <script>
 
-window.addEventListener("load",()=>{
+function iniciarMotor(){
 
     const canvas=document.getElementById("estadoCanvas");
 
@@ -205,7 +205,17 @@ for(const p of proyectados){
 
     }
 
-    dibujar();
+        dibujar();
+
+}
+
+tour.addEventListener?.("tourLoaded", iniciarMotor);
+
+if(tour.isInitialized){
+
+    iniciarMotor();
+
+}
 
 });
 
