@@ -1,3 +1,4 @@
+alert("estado_lotes.js cargado");
 // =====================================================
 // MOTOR DE LOTES PARA 3DVISTA
 // Proyecto ASSTURIAS
