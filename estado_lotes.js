@@ -228,8 +228,3 @@ function dibujarPuntoPrueba(){
     EstadoLotes.ctx.fill();
 
 }
-function dibujarPuntoPrueba(){
-
-    ...
-
-}
