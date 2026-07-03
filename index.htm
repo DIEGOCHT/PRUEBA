@@ -153,41 +153,27 @@ const puntos = [
 
 ];
 
-const proyectados=[];
+const proyectados = [
 
-for(const p of puntos){
+    [200,200],
 
-    const dx=p[0]-camYaw;
-    const dy=p[1]-camPitch;
+    [400,200],
 
-    const px=canvas.width/2+(dx/hfov)*canvas.width;
-    const py=canvas.height/2+(dy/vfov)*canvas.height;
+    [400,400],
 
-    proyectados.push([px,py]);
+    [200,400]
 
-}
+];
 
 // ---------- DIBUJAR POLÍGONO ----------
 
 ctx.beginPath();
 
-ctx.moveTo(
-
-    proyectados[0][0],
-
-    proyectados[0][1]
-
-);
+ctx.moveTo(proyectados[0][0], proyectados[0][1]);
 
 for(let i=1;i<proyectados.length;i++){
 
-    ctx.lineTo(
-
-        proyectados[i][0],
-
-        proyectados[i][1]
-
-    );
+    ctx.lineTo(proyectados[i][0], proyectados[i][1]);
 
 }
 
@@ -203,27 +189,13 @@ ctx.strokeStyle="red";
 
 ctx.stroke();
 
-// ---------- DIBUJAR VÉRTICES ----------
-
 ctx.fillStyle="red";
 
 for(const p of proyectados){
 
     ctx.beginPath();
 
-    ctx.arc(
-
-        p[0],
-
-        p[1],
-
-        6,
-
-        0,
-
-        Math.PI*2
-
-    );
+    ctx.arc(p[0],p[1],6,0,Math.PI*2);
 
     ctx.fill();
 
