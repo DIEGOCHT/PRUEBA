@@ -76,15 +76,18 @@ window.addEventListener("load",()=>{
 
     window.addEventListener("resize",resize);
 
-   let x = window.innerWidth / 2;
-let y = window.innerHeight / 2;
+   const player = tour.player.getById("MainViewerPanoramaPlayer");
 
-window.addEventListener("mousemove",(e)=>{
+const lote = {
 
-    x = e.clientX;
-    y = e.clientY;
+    yaw:-75.03231418757888,
 
-}); 
+    pitch:-58.40546325256681
+
+};
+
+let x=0;
+let y=0; 
 function dibujar(){
 
         ctx.clearRect(
@@ -99,7 +102,23 @@ function dibujar(){
 
         );
 
-        ctx.beginPath();
+        const camYaw=player.get("yaw");
+
+const camPitch=player.get("pitch");
+
+const hfov=player.get("actualHFOV");
+
+const vfov=hfov*(canvas.height/canvas.width);
+
+const dx=lote.yaw-camYaw;
+
+const dy=lote.pitch-camPitch;
+
+x=canvas.width/2+(dx/hfov)*canvas.width;
+
+y=canvas.height/2+(dy/vfov)*canvas.height;
+
+ctx.beginPath();
 
 ctx.arc(
 
