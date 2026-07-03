@@ -60,6 +60,16 @@
 
 function iniciarMotor(){
 
+    const player = tour.player.getById("MainViewerPanoramaPlayer");
+
+    if(!player){
+
+        requestAnimationFrame(iniciarMotor);
+
+        return;
+
+    }
+
     const canvas=document.getElementById("estadoCanvas");
 
     const ctx=canvas.getContext("2d");
@@ -75,8 +85,6 @@ function iniciarMotor(){
     resize();
 
     window.addEventListener("resize",resize);
-
-   const player = tour.player.getById("MainViewerPanoramaPlayer");
 
 const lote = {
 
@@ -209,16 +217,7 @@ for(const p of proyectados){
 
 }
 
-tour.addEventListener?.("tourLoaded", iniciarMotor);
-
-if(tour.isInitialized){
-
-    iniciarMotor();
-
-}
-
-});
-
+iniciarMotor();
 </script>
 </body>
 </html>
