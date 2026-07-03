@@ -141,25 +141,47 @@ x=canvas.width/2+(dx/hfov)*canvas.width;
 
 y=canvas.height/2+(dy/vfov)*canvas.height;
 
-ctx.beginPath();
+const puntos = [
 
-ctx.arc(
+[-85.04888875263237,-54.7102581111818],
 
-    x,
+[-70.41364840554282,-53.010437284280314],
 
-    y,
+[-62.81332497978119,-60.72314262092043],
 
-    20,
+[-81.76594053506787,-63.96328706377697]
 
-    0,
-
-    Math.PI*2
-
-);
+];
 
 ctx.fillStyle="red";
 
-ctx.fill();
+for(const p of puntos){
+
+    const dx = p[0] - camYaw;
+    const dy = p[1] - camPitch;
+
+    const px = canvas.width/2 + (dx/hfov)*canvas.width;
+    const py = canvas.height/2 + (dy/vfov)*canvas.height;
+
+    ctx.beginPath();
+
+    ctx.arc(
+
+        px,
+
+        py,
+
+        8,
+
+        0,
+
+        Math.PI*2
+
+    );
+
+    ctx.fill();
+
+}
 
         requestAnimationFrame(dibujar);
 
