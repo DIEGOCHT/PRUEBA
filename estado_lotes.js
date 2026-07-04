@@ -1,6 +1,7 @@
 (function () {
 
     function iniciar() {
+console.log("Entrando a iniciar...");
 
         try {
 
@@ -59,9 +60,11 @@
 
         catch(e){
 
-            requestAnimationFrame(iniciar);
+    console.error("ERROR estado_lotes.js:", e);
 
-        }
+    requestAnimationFrame(iniciar);
+
+}
 
     }
 
