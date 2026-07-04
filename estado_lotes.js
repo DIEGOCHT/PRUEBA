@@ -14,6 +14,9 @@
         const root = tour.player.wv.Xl.Xb();
         const pp = root.MainViewerPanoramaPlayer;
         const camera = pp.U.Yy.renderer.qk.getCamera();
+window.root3dv = root;
+window.pp3dv = pp;
+window.cam3dv = camera;
 
         //==============================
         // Canvas
