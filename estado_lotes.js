@@ -30,7 +30,12 @@
 
         const camera = pp.U.Yy.renderer.qk.getCamera();
 
-        console.log(camera);
+alert(
+    "PerspectiveCamera: " +
+    camera.isPerspectiveCamera
+);
+
+window.tdvCamera = camera;
 
     }
 
