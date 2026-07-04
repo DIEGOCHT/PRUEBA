@@ -28,14 +28,7 @@
 
         const pp = root.MainViewerPanoramaPlayer;
 
-        const camera = pp.U.Yy.renderer.qk.getCamera();
-
-alert(
-    "PerspectiveCamera: " +
-    camera.isPerspectiveCamera
-);
-
-window.tdvCamera = camera;
+        
 
     }
 
