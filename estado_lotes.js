@@ -1,39 +1,47 @@
-(function () {
+alert("1. Archivo cargado");
 
-    function esperarTour() {
+(function(){
 
-        if (typeof window.tour === "undefined") {
+    alert("2. Entró a la función");
 
-            console.log("Esperando tour...");
+    console.log("2. Entró a la función");
 
-            requestAnimationFrame(esperarTour);
+    function iniciar(){
 
-            return;
+        alert("3. Entró a iniciar");
+
+        console.log("3. Entró a iniciar");
+
+        try{
+
+            alert("4. Antes de root");
+
+            const root = tour.player.wv.Xl.Xb();
+
+            alert("5. Root OK");
+
+            const pp = root.MainViewerPanoramaPlayer;
+
+            alert("6. Player OK");
+
+            const camera = pp.U.Yy.renderer.qk.getCamera();
+
+            alert("7. Cámara OK");
+
+            console.log(camera);
 
         }
 
-        if (!tour.player) {
+        catch(e){
 
-            console.log("Esperando player...");
+            alert("ERROR:\n\n"+e);
 
-            requestAnimationFrame(esperarTour);
-
-            return;
+            console.error(e);
 
         }
-
-        alert("TOUR ENCONTRADO");
-
-        const root = tour.player.wv.Xl.Xb();
-
-        const pp = root.MainViewerPanoramaPlayer;
-
-        const camera = pp.U.Yy.renderer.qk.getCamera();
-
-        console.log(camera);
 
     }
 
-    esperarTour();
+    iniciar();
 
 })();
